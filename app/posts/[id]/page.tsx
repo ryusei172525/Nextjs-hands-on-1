@@ -12,7 +12,6 @@ async function getPost(id: string) {
 }
 
 export default async function PostPage({ params }: { params: { id: string } }) {
-  const post = await getPost(params.id);
 
   if (!post) {
     notFound();
@@ -20,8 +19,8 @@ export default async function PostPage({ params }: { params: { id: string } }) {
 
   return (
     <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <h1>{title}</h1>
+      <p>{body}</p>
       <Link href="/">Back to Home</Link>
     </div>
   );

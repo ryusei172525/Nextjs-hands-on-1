@@ -9,16 +9,15 @@ async function getPosts() {
 }
 
 export default async function HomePage() {
-  const posts = await getPosts();
 
   return (
     <div>
       <h1>Blog Posts</h1>
       <ul>
         {posts.map((post: { id: number; title: string }) => (
-          <li key={post.id}>
-            <Link href={`/posts/${post.id}`}>
-              {post.title}
+          <li>
+            <Link href={`/posts/${id}`}>
+              {title}
             </Link>
           </li>
         ))}
